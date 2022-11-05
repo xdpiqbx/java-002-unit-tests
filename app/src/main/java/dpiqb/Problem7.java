@@ -65,13 +65,6 @@ public class Problem7 {
                 .mapToInt(it -> romeToArabic(it))
                 .sum();
         return arabicToRome(arabicSum);
-//        String[] romeNumbers = expression.split("\\+");
-//
-//        int result = 0;
-//        for (String romeNum: romeNumbers) {
-//            result += romeToArabic(romeNum);
-//        }
-//        return arabicToRome(result);
     }
 
     enum RomanNumeral {

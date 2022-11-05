@@ -35,7 +35,8 @@ class Problem7Tests {
                 Assertions.assertEquals(
                         expectedArabic,
                         new Problem7().romeToArabic(rome),
-                        rome)
+                        rome // это выведется если тест упадёт
+                )
         );
     }
     @Test
