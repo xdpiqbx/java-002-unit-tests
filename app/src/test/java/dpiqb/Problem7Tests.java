@@ -79,4 +79,16 @@ class Problem7Tests {
             );
         });
     }
+
+    @Test
+    public void testThatIllegalArgumentExceptionThrownForInvalidInput(){
+        int[] invalidInput = {0, 4001};
+
+        for (int input : invalidInput) {
+            Assertions.assertThrows(
+                    IllegalArgumentException.class,
+                    () -> new Problem7().arabicToRome(input)
+            );
+        }
+    }
 }
