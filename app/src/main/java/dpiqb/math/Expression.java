@@ -26,5 +26,9 @@ public class Expression {
         public String toString() {
             return humanReadablePresentation;
         }
+
+        public char toChar(){
+            return toString().charAt(0);
+        }
     }
 }
