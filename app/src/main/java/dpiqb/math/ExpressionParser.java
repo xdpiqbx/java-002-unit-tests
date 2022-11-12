@@ -6,8 +6,6 @@ import java.util.Optional;
 public class ExpressionParser {
     public Expression parse(String expression) {
         try{
-            boolean searchA = true;
-
             char[] chars = expression.toCharArray();
             for (int i = 1; i < chars.length; i++) {
                 char c = chars[i];
