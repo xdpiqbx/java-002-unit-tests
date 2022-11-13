@@ -6,14 +6,21 @@ import java.util.Optional;
 public class ExpressionParser {
     public Expression parse(String expression) {
         try{
-            char[] chars = expression.toCharArray();
+            StringBuilder cleanedExpression = new StringBuilder();
+            for (char c : expression.toCharArray()) {
+                if(Character.isWhitespace(c)){
+                    continue;
+                }
+                cleanedExpression.append(c);
+            }
+            char[] chars = cleanedExpression.toString().toCharArray();
             for (int i = 1; i < chars.length; i++) {
                 char c = chars[i];
                 Optional<Expression.Operator> operator = getOperator(c);
                 if(operator.isPresent()){
                     return Expression.builder()
-                            .a(Integer.parseInt(expression.substring(0, i)))
-                            .b(Integer.parseInt(expression.substring(i + 1)))
+                            .a(Integer.parseInt(cleanedExpression.substring(0, i)))
+                            .b(Integer.parseInt(cleanedExpression.substring(i + 1)))
                             .operator(operator.get())
                             .build();
                 }

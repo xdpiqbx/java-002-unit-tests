@@ -51,6 +51,10 @@ class ExpressionParserTest {
     public void testMinus5MinusMinus4(){
         test("-5--4", -5, -4, Expression.Operator.minus);
     }
+    @Test
+    public void testThatWhiteSpacesIgnored(){
+        test("   5 - 3 \t\n", 5, 3, Expression.Operator.minus);
+    }
     // IllegalArgumentException - 5, 5+, 6++3, 8-aaa, 5.3+7
     @Test
     public void testThatInvalidInputCorrectlyHandled(){
